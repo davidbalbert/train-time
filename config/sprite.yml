@@ -1,0 +1,14 @@
+# https://github.com/railsjedi/sprite
+config:
+  style: sass_mixin
+  style_output_path: stylesheets/partials/sprite
+  image_source_path: images/
+  image_output_path: images/
+  url_formatter: image-url("%s")
+  public_path: app/assets/
+  class_separator: '_'
+  add_datestamps: false
+images:
+  - name: sprite
+    sources:
+      - sprite/*.png

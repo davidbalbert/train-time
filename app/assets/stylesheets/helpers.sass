@@ -1,0 +1,166 @@
+// additional mixins and classes that are useful
+// stacking, centering, gradient and sprite monkeypatches,
+// and link style helpers
+
+// stack elements
+=stack
+  float: left
+  clear: both
+
+// as above, with full width
+=stackwide
+  +stack
+  width: 100%
+
+// quick class to stack elements
+.row
+  +stackwide
+
+// centering for objects of unknown or variable widths
+// nice because you can float .outer if you want
+// caution! this might overflow. you probably want
+// the parent to have overflow: hidden
+//
+// html:
+// .outer
+//   .inner
+//     content goes here
+.outer
+  +stack
+  position: relative
+  left: 50%
+
+.inner
+  position: relative
+  left: -50%
+
+// center a div of known width
+// mix it into your style, passing
+// the width
+=center($width)
+  width: $width
+  margin:
+    left: $width/2*-1
+  position: relative
+  left: 50%
+
+// hide elements
+.hidden
+  display: none
+
+// default list style has no bullets
+ul
+  list-style-type: none
+
+// styles to make something overfl...
+=ellipsis
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+// add ie 6-8 suppoer to the bourbon gradient mixin
+=gradient($start, $end)
+  +linear-gradient($start, $end)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start}', endColorstr='#{$end}',GradientType=0)
+
+// Clearfix
+// Does not support FF < 3.5
+// Adapted from: http://nicolasgallagher.com/micro-clearfix-hack
+=clearfix
+  zoom: 1
+
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+// add to the mixin for sprites to allow
+// hidden text inside the sprite
+=sprited($group_name, $image_name, $offset: 0)
+  +sprite($group_name, $image_name, $offset)
+  display: block
+  overflow: hidden
+  line-height: 1000px
+
+// easily set the color for links
+//
+// when passed one color, it will autogenerate darker
+// hover and active state colors.
+//
+// when passed two, it will be the default and hover states,
+// active will be a darker version of hover
+//
+// when passed three colors, it will be default, hover, and active
+=link_color($color, $hover: false, $active: false)
+  color: $color
+
+  // if only passed one color
+  @if ($hover == false) and ($active == false)
+    &:hover
+      color: darken($color, 10%)
+
+    &:active
+      color: darken($color, 20%)
+
+  // if passed two colors
+  @if ($hover) and ($active == false)
+    &:hover
+      color: $hover
+
+    &:active
+      color: darken($hover, 10%)
+
+  // and if passed 3 colors
+  @if ($hover) and ($active)
+    &:hover
+      color: $hover
+
+    &:active
+      color: $blue
+
+// easily set the color for link backgrounds
+// uses the same method as =link_color, see above
+// for explanation
+=link_bg($color, $hover: false, $active: false)
+  background: $color
+  +transition(background 0.1s linear)
+
+  // if only passed one color
+  @if ($hover == false) and ($active == false)
+    &:hover
+      background: darken($color, 10%)
+
+    &:active
+      background: darken($color, 20%)
+
+  // if passed two
+  @if ($hover) and ($active == false)
+    &:hover
+      background: $hover
+
+    &:active
+      background: darken($hover, 10%)
+
+  // and if passed all three
+  @if ($hover) and ($active)
+    &:hover
+      background: $hover
+
+    &:active
+      background: $active
+
+// set the text decoration for links
+=link_td($td1: false, $td2: false, $td3: false)
+  @if ($td1)
+    text-decoration: $td1
+
+  @if ($td2) and ($td3 == false)
+    &:hover, &:active
+      text-decoration: $td2
+
+  @if ($td2) and ($td3)
+    &:hover
+      text-decoration: $td2
+
+    &:active
+      text-decoration: $td3
