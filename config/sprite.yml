@@ -1,7 +1,7 @@
 # https://github.com/railsjedi/sprite
 config:
   style: sass_mixin
-  style_output_path: stylesheets/partials/sprite
+  style_output_path: stylesheets/sprite
   image_source_path: images/
   image_output_path: images/
   url_formatter: image-url("%s")

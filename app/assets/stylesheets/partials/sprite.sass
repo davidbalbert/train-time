@@ -1,0 +1,45 @@
+= sprite($group-name, $image-name, $offset: 0)
+  @if $group-name == "sprite" and $image-name == "line140-1"
+    background: image-url("sprite.png") no-repeat 0px #{0+$offset}px
+    +sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "line140-2"
+    background: image-url("sprite.png") no-repeat 0px #{-140+$offset}px
+    +sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "line140-3"
+    background: image-url("sprite.png") no-repeat 0px #{-280+$offset}px
+    +sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "line140-4"
+    background: image-url("sprite.png") no-repeat 0px #{-420+$offset}px
+    +sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "line140-5"
+    background: image-url("sprite.png") no-repeat 0px #{-560+$offset}px
+    +sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "line140-6"
+    background: image-url("sprite.png") no-repeat 0px #{-700+$offset}px
+    +sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "line140-s"
+    background: image-url("sprite.png") no-repeat 0px #{-840+$offset}px
+    +sprite-dimensions($group-name, $image-name)
+
+= sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "line140-1"
+    width: 140px
+    height: 140px
+  @if $group-name == "sprite" and $image-name == "line140-2"
+    width: 140px
+    height: 140px
+  @if $group-name == "sprite" and $image-name == "line140-3"
+    width: 140px
+    height: 140px
+  @if $group-name == "sprite" and $image-name == "line140-4"
+    width: 140px
+    height: 140px
+  @if $group-name == "sprite" and $image-name == "line140-5"
+    width: 140px
+    height: 140px
+  @if $group-name == "sprite" and $image-name == "line140-6"
+    width: 140px
+    height: 140px
+  @if $group-name == "sprite" and $image-name == "line140-s"
+    width: 140px
+    height: 140px
