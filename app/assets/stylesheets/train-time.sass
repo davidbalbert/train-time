@@ -7,11 +7,15 @@ $white: #fff
 
 body
   .stackwide
+    min-width: 640px
   background: $bg
+  font-family: '04b03'
   color: $white
 
 #wrapper
+  +stack
   +center(640px)
+  padding: 40px
   background: url(/assets/grid.png) 0 0 repeat
 
 // 140 pixel train line images
@@ -36,3 +40,15 @@ body
 .line140-s
   +sprited("sprite", "line140-s")
 
+// positioning for 140 pixel train images
+.line140-1, .line140-2, .line140-3,
+.line140-4, .line140-5, .line140-6,
+.line140-s
+  float: left
+  margin:
+    right: 70px
+    bottom: 70px
+
+.line140-3, .line140-6
+  margin:
+    right: 0
