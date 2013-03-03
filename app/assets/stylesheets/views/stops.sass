@@ -6,9 +6,12 @@ h1
 
 .lines
   +stack
+  height: 70px
+  position: relative
+  overflow: hidden
   margin:
     top: 13px
-  
+
   .line
     float: left
     margin:
@@ -25,18 +28,52 @@ h2
     top: 69px
   @extend .font20
 
+  &.downtown
+    margin-top: 57px
+
 table.direction
-  +stackwide
+  +clearfix
+  width: 100%
   @extend .font20
 
   tr
-    +stackwide
+    padding:
+      top: 17px
+
+    &:first-child
+      margin:
+        top: 0
+
+  td
+    vertical-align: top
 
   td.line
     width: 60px
+    height: 60px
+    padding:
+      top: 16px
 
-  td.endpoint
+  td.destination, td.time
+    padding:
+      top: 24px
+
+  td.destination
     width: 400px
+    line-height: 30px
 
   td.time
     width: 100px
+
+    &.arriving
+      color: #dd7c00
+      -webkit-animation-name: blink
+      -webkit-animation-duration: 1.2s
+      -webkit-animation-iteration-count: infinite
+      -webkit-animation-timing-function: cubic-bezier(1,0,0,1)
+
+@-webkit-keyframes blink
+  from
+    opacity: 1
+
+  to
+    opacity: 0
