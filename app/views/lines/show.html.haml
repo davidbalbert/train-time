@@ -1,6 +1,10 @@
-%div{:class => "line70-#{@line_num}"}
-
-%ol
-  - @stops.each do |stop|
-    %li= link_to stop[:name], stop_path(stop[:id], :from => @line_num)
-
+#wrapper
+  .navigation
+    %a{href: "/"} home
+  %div{class: "line70-#{@line_num}"}
+  %ul.line-wrapper
+    - @stops.each do |stop|
+      %li
+        .line{class: "line-#{@line_num}"}
+        = link_to stop_path(stop[:id], :from => @line_num) do
+          %span= stop[:name]

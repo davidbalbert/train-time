@@ -1,0 +1,34 @@
+ul.line-wrapper
+  +stackwide
+  @extend .font30
+
+  li
+    position: relative
+    overflow: hidden
+    +stackwide
+    padding:
+      top: 40px
+
+  a
+    +stackwide
+  
+  span
+    float: right
+    width: 470px
+
+.line
+  display: block
+  position: absolute
+  left: 30px
+  width: 10px
+  height: 300px
+  min-height: 40px
+
+  &.line-1, &.line-2, &.line-3
+    background: $red
+
+  &.line-1, &.line-2, &.line-3
+    background: $red
+
+  &.line-s
+    background: $gray

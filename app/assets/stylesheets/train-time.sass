@@ -1,6 +1,9 @@
 // variables
 $bg: #2b2b2b
 $white: #fff
+$red: #dc1313
+$green: #53b909
+$gray: #aaa9a9
 
 // run the reset
 +html5-boilerplate-reset
@@ -22,6 +25,10 @@ body
   background: $bg
   font-family: '04b03'
   color: $white
+
+a
+  color: $white
+  text-decoration: none
 
 #wrapper
   +stack
@@ -77,5 +84,8 @@ body
 
 // navigation row (back, line, home, etc.)
 .navigation
-  .stackwide
+  +stackwide
   @extend .font20
+  margin:
+    bottom: 55px
+    left: 1px
