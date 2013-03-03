@@ -1,0 +1,42 @@
+h1
+  +stack
+  margin:
+    top: 10px
+  @extend .font30
+
+.lines
+  +stack
+  margin:
+    top: 13px
+  
+  .line
+    float: left
+    margin:
+      top: 0
+      left: 20px
+
+    &:first-child
+      margin:
+        left: 0
+
+h2
+  +stackwide
+  margin:
+    top: 69px
+  @extend .font20
+
+table.direction
+  +stackwide
+  @extend .font20
+
+  tr
+    +stackwide
+
+  td.line
+    width: 60px
+
+  td.endpoint
+    width: 400px
+
+  td.time
+    width: 100px
