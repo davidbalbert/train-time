@@ -3,6 +3,10 @@
     %a{href: "/"} home
     %span.sep -
     %a{href: "/lines/#{@from}"} #{@from} line
+  %a.favorite{href: "#", class: @favorited ? "favorited" : ""}
+    .text
+      favorite#{@favorited ? "d" : ""}
+    .icon
   %h1 Union Square
   .lines
     .line.line70-4

@@ -1,3 +1,23 @@
+.favorite
+  float: right
+  @extend .font20
+
+  .text, .icon
+    float: left
+
+  .icon
+    position: relative
+    bottom: 10px
+    margin:
+      left: 10px
+    +sprited("sprite", "star")
+
+  &.favorited
+    color: $orange
+
+    .icon
+      +sprited("sprite", "star-orange")
+
 h1
   +stack
   margin:
@@ -63,9 +83,10 @@ table.direction
 
   td.time
     width: 100px
+    text-align: right
 
     &.arriving
-      color: #dd7c00
+      color: $orange
       -webkit-animation-name: blink
       -webkit-animation-duration: 1.2s
       -webkit-animation-iteration-count: infinite

@@ -83,6 +83,12 @@
   @if $group-name == "sprite" and $image-name == "line70-s"
     background: image-url("sprite.png") no-repeat 0px #{-1960+$offset}px
     +sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "star-orange"
+    background: image-url("sprite.png") no-repeat 0px #{-2030+$offset}px
+    +sprite-dimensions($group-name, $image-name)
+  @if $group-name == "sprite" and $image-name == "star"
+    background: image-url("sprite.png") no-repeat 0px #{-2065+$offset}px
+    +sprite-dimensions($group-name, $image-name)
 
 = sprite-dimensions($group-name, $image-name)
   @if $group-name == "sprite" and $image-name == "line140-1"
@@ -169,3 +175,9 @@
   @if $group-name == "sprite" and $image-name == "line70-s"
     width: 70px
     height: 70px
+  @if $group-name == "sprite" and $image-name == "star-orange"
+    width: 35px
+    height: 35px
+  @if $group-name == "sprite" and $image-name == "star"
+    width: 35px
+    height: 35px
