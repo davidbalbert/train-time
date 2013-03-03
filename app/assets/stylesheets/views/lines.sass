@@ -34,6 +34,23 @@ ul.line-wrapper
         text-transform: lowercase
         text-align: center
 
+    &.first-stop
+      .line
+        top: 30px
+
+      .stop-marker
+        margin:
+          top: 7px
+
+      .stop-name
+        margin:
+          top: 0px
+
+    &:last-child
+      .line
+        min-height: 0
+        height: 60px
+
   .line
     display: block
     position: absolute

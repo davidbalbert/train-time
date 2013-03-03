@@ -7,8 +7,8 @@
       .sep
       .text bronx
       .sep
-    - @stops.each do |stop|
-      %li
+    - @stops.each_with_index do |stop, i|
+      %li{class: i == 0 ? "first-stop" : ""}
         .line{class: "line-#{@line_num}"}
         = link_to stop_path(stop[:id], :from => @line_num) do
           .stop-marker{class: "line-#{@line_num}"}
