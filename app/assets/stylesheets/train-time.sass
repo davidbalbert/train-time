@@ -21,8 +21,7 @@ $orange: #dd7c00
   line-height: 37px
 
 body
-  .stackwide
-    min-width: 640px
+  min-width: 640px
   background: $bg
   font-family: '04b03'
   color: $white
@@ -32,10 +31,11 @@ a
   text-decoration: none
 
 #wrapper
-  +stack
-  +center(640px)
+  +clearfix
+  width: 640px
   padding: 40px
-  background: url(/assets/grid.png) 0 0 repeat
+  margin: 0 auto
+  //background: url(/assets/grid.png) 0 0 repeat
 
 // 140px train line images
 .line140-1
