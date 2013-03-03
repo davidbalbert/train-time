@@ -9,7 +9,7 @@ ul.favorites
     bottom: 60px
 
   li
-    +stackwide
+    +clearfix
     margin-top: 24px
 
     &:first-child
@@ -23,24 +23,27 @@ ul.favorites
     width: 450px
 
     .favorites-headline
-      +stack
-      margin:
+      padding:
         top: 20px
-        bottom: 13px
         left: 1px
+      line-height: 39px
 
     $tablew: 280px
     table
-      +stack
+      +clearfix
       width: $tablew
 
     tr
-      +stackwide
-      margin:
-        top: 16px
+      width: 100%
+
+      td
+        padding:
+          top: 16px
 
       &:first-child
-        margin: 0
+        td
+          padding:
+            top: 10px
 
     $directionw: 160px
     td
