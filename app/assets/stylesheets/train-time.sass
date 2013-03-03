@@ -75,72 +75,7 @@ body
   +sprited("sprite", "line70-s")
 
 
-//
-// Home
-//
-
-.home-headline
-  +stackwide
-  margin:
-    bottom: 35px
-
-ul.favorites
-  +stackwide
-  margin:
-    bottom: 60px
-
-  li
-    +stackwide
-    margin-top: 24px
-
-    &:first-child
-      margin: 0
-
-  .line
-    float: left
-
-  .content
-    float: right
-    width: 450px
-
-    .favorites-headline
-      +stack
-      margin:
-        top: 20px
-        bottom: 13px
-        left: 1px
-
-    $tablew: 280px
-    table
-      +stack
-      width: $tablew
-
-    tr
-      +stackwide
-      margin:
-        top: 16px
-
-      &:first-child
-        margin: 0
-
-    $directionw: 160px
-    td
-      text-align: right
-      width: $tablew - $directionw
-
-      &:first-child
-        width: $directionw
-        text-align: left
-
-// positioning for 140 pixel train images
-.line140-1, .line140-2, .line140-3,
-.line140-4, .line140-5, .line140-6,
-.line140-s
-  float: left
-  margin:
-    right: 70px
-    bottom: 70px
-
-.line140-3, .line140-6
-  margin:
-    right: 0
+// navigation row (back, line, home, etc.)
+.navigation
+  .stackwide
+  @extend .font20
