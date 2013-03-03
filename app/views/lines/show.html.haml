@@ -1,0 +1,6 @@
+%div{:class => "line70-#{@line_num}"}
+
+%ol
+  - @stops.each do |stop|
+    %li= link_to stop[:name], stop_path(stop[:id], :from => @line_num)
+
