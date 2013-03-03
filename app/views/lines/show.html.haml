@@ -6,5 +6,7 @@
     - @stops.each do |stop|
       %li
         .line{class: "line-#{@line_num}"}
+        .stop-marker{class: "line-#{@line_num}"}
+          .stop-marker-center
         = link_to stop_path(stop[:id], :from => @line_num) do
-          %span= stop[:name]
+          = stop[:name]

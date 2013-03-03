@@ -7,28 +7,45 @@ ul.line-wrapper
     overflow: hidden
     +stackwide
 
-  a
-    +stackwide
+  .line
+    display: block
+    position: absolute
+    z-index: 1
+    left: 30px
+    width: 10px
+    height: 300px
+    min-height: 40px
+
+  .stop-marker
+    position: relative
+    z-index: 2
+    float: left
     margin:
       top: 40px
-  
-  span
+      left: 20px
+    width: 30px
+    height: 30px
+    padding: 10px
+
+    .stop-marker-center
+      display: block
+      width: 10px
+      height: 10px
+      background: $bg
+
+  a
     float: right
     width: 470px
+    margin:
+      top: 40px
 
-.line
-  display: block
-  position: absolute
-  left: 30px
-  width: 10px
-  height: 300px
-  min-height: 40px
+// put in this scope to work for the lines
+// and for the stop markers
+.line-1, .line-2, .line-3
+  background: $red
 
-  &.line-1, &.line-2, &.line-3
-    background: $red
+.line-1, .line-2, .line-3
+  background: $red
 
-  &.line-1, &.line-2, &.line-3
-    background: $red
-
-  &.line-s
-    background: $gray
+.line-s
+  background: $gray
