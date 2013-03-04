@@ -1,17 +1,17 @@
 #wrapper
   .navigation
-    %a{href: "/"} home
+    = link_to "home", root_path
     %span.sep -
-    %a{href: "/lines/#{@from}"} #{@from} line
+    = link_to "#{@from} line", line_path(@from)
   %a.favorite{href: "#", class: @favorited ? "favorited" : ""}
     .text
       favorite#{@favorited ? "d" : ""}
     .icon
-  %h1 Union Square
+  %h1= @stop_name
   .lines
-    .line.line70-4
-    .line.line70-5
-    .line.line70-6
+    - @lines.each do |line_num|
+      .line{:class => "line70-#{line_num}"}
+
   %h2 UPTOWN
   %table.direction
     %tr
