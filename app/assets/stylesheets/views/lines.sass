@@ -1,0 +1,99 @@
+.line-header
+  clear: both
+
+ul.line-wrapper
+  +stackwide
+  @extend .font30
+
+  li
+    position: relative
+    overflow: hidden
+    +stackwide
+
+    &.borough
+      margin: 30px 0
+      height: 10px
+      overflow: visible
+
+      .sep
+        float: left
+        width: 120px
+        height: 10px
+        background: #959595
+
+        &:first-child
+          margin:
+            left: 10px
+
+      .text
+        float: left
+        width: 300px
+        position: relative
+        bottom: 6px
+        @extend .font20
+        text-transform: lowercase
+        text-align: center
+
+    &.first-stop
+      .line
+        top: 30px
+
+      .stop-marker
+        margin:
+          top: 7px
+
+      .stop-name
+        margin:
+          top: 0px
+
+    &:last-child
+      .line
+        min-height: 0
+        height: 60px
+
+  .line
+    display: block
+    position: absolute
+    z-index: 1
+    left: 30px
+    width: 10px
+    height: 300px
+    min-height: 40px
+
+  .stop-marker
+    position: relative
+    z-index: 2
+    float: left
+    margin:
+      top: 50px
+      left: 20px
+    width: 30px
+    height: 30px
+    padding: 10px
+
+    .stop-marker-center
+      display: block
+      width: 10px
+      height: 10px
+      background: $bg
+
+      &.transfer
+        background: $white
+
+  .stop-name
+    float: right
+    width: 470px
+    margin:
+      top: 42px
+    line-height: 49px
+
+// put in this scope to work for the lines
+// and for the stop markers
+.line-1, .line-2, .line-3
+  background: $red
+
+.line-1, .line-2, .line-3
+  background: $red
+
+.line-s
+  background: $gray

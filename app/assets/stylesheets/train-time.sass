@@ -1,6 +1,10 @@
 // variables
 $bg: #2b2b2b
 $white: #fff
+$red: #dc1313
+$green: #53b909
+$gray: #aaa9a9
+$orange: #dd7c00
 
 // run the reset
 +html5-boilerplate-reset
@@ -17,17 +21,21 @@ $white: #fff
   line-height: 37px
 
 body
-  .stackwide
-    min-width: 640px
+  min-width: 640px
   background: $bg
   font-family: '04b03'
   color: $white
 
+a
+  color: $white
+  text-decoration: none
+
 #wrapper
-  +stack
-  +center(640px)
+  +clearfix
+  width: 640px
   padding: 40px
-  background: url(/assets/grid.png) 0 0 repeat
+  margin: 0 auto
+  //background: url(/assets/grid.png) 0 0 repeat
 
 // 140px train line images
 .line140-1
@@ -75,72 +83,57 @@ body
   +sprited("sprite", "line70-s")
 
 
-//
-// Home
-//
+// 40px train line images
+.line40-1
+  +sprited("sprite", "line40-1")
 
-.home-headline
-  +stackwide
+.line40-1x
+  +sprited("sprite", "line40-1x")
+
+.line40-2
+  +sprited("sprite", "line40-2")
+
+.line40-2x
+  +sprited("sprite", "line40-2x")
+
+.line40-3
+  +sprited("sprite", "line40-3")
+
+.line40-3x
+  +sprited("sprite", "line40-3x")
+
+.line40-4
+  +sprited("sprite", "line40-4")
+
+.line40-4x
+  +sprited("sprite", "line40-4x")
+
+.line40-5
+  +sprited("sprite", "line40-5")
+
+.line40-5x
+  +sprited("sprite", "line40-5x")
+
+.line40-6
+  +sprited("sprite", "line40-6")
+
+.line40-6x
+  +sprited("sprite", "line40-6x")
+
+.line40-s
+  +sprited("sprite", "line40-s")
+
+.line40-sx
+  +sprited("sprite", "line40-sx")
+
+
+// navigation row (back, line, home, etc.)
+.navigation
+  +stack
+  @extend .font20
   margin:
-    bottom: 35px
+    bottom: 55px
+    left: 1px
 
-ul.favorites
-  +stackwide
-  margin:
-    bottom: 60px
-
-  li
-    +stackwide
-    margin-top: 24px
-
-    &:first-child
-      margin: 0
-
-  .line
-    float: left
-
-  .content
-    float: right
-    width: 450px
-
-    .favorites-headline
-      +stack
-      margin:
-        top: 20px
-        bottom: 13px
-        left: 1px
-
-    $tablew: 280px
-    table
-      +stack
-      width: $tablew
-
-    tr
-      +stackwide
-      margin:
-        top: 16px
-
-      &:first-child
-        margin: 0
-
-    $directionw: 160px
-    td
-      text-align: right
-      width: $tablew - $directionw
-
-      &:first-child
-        width: $directionw
-        text-align: left
-
-// positioning for 140 pixel train images
-.line140-1, .line140-2, .line140-3,
-.line140-4, .line140-5, .line140-6,
-.line140-s
-  float: left
-  margin:
-    right: 70px
-    bottom: 70px
-
-.line140-3, .line140-6
-  margin:
-    right: 0
+  .sep
+    padding: 0 10px

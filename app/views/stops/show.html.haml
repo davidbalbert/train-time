@@ -1,0 +1,48 @@
+#wrapper
+  .navigation
+    %a{href: "/"} home
+    %span.sep -
+    %a{href: "/lines/#{@from}"} #{@from} line
+  %a.favorite{href: "#", class: @favorited ? "favorited" : ""}
+    .text
+      favorite#{@favorited ? "d" : ""}
+    .icon
+  %h1 Union Square
+  .lines
+    .line.line70-4
+    .line.line70-5
+    .line.line70-6
+  %h2 UPTOWN
+  %table.direction
+    %tr
+      %td.line
+        .line40-6
+      %td.destination Pelham Bay Park
+      %td.time 3min
+    %tr
+      %td.line
+        .line40-6
+      %td.destination Eastchester<br>Dyer Ave.
+      %td.time 4min
+    %tr
+      %td.line
+        .line40-6x
+      %td.destination Pelham Bay Park
+      %td.time 3min
+  %h2.downtown DOWNTOWN
+  %table.direction
+    %tr
+      %td.line
+        .line40-6
+      %td.destination Pelham Bay Park
+      %td.time.arriving 0min
+    %tr
+      %td.line
+        .line40-6
+      %td.destination Eastchester<br>Dyer Ave.
+      %td.time 4min
+    %tr
+      %td.line
+        .line40-6x
+      %td.destination Pelham Bay Park
+      %td.time 3min

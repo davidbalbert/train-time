@@ -1,0 +1,68 @@
+.home-headline
+  +stackwide
+  margin:
+    bottom: 35px
+
+ul.favorites
+  +stackwide
+  margin:
+    bottom: 60px
+
+  li
+    +clearfix
+    margin-top: 24px
+
+    &:first-child
+      margin: 0
+
+  .line
+    float: left
+
+  .content
+    float: right
+    width: 450px
+
+    .favorites-headline
+      padding:
+        top: 20px
+        left: 1px
+      line-height: 39px
+
+    $tablew: 280px
+    table
+      +clearfix
+      width: $tablew
+
+    tr
+      width: 100%
+
+      td
+        padding:
+          top: 16px
+
+      &:first-child
+        td
+          padding:
+            top: 10px
+
+    $directionw: 160px
+    td
+      text-align: right
+      width: $tablew - $directionw
+
+      &:first-child
+        width: $directionw
+        text-align: left
+
+// positioning for 140 pixel train images
+.line140-1, .line140-2, .line140-3,
+.line140-4, .line140-5, .line140-6,
+.line140-s
+  float: left
+  margin:
+    right: 70px
+    bottom: 70px
+
+.line140-3, .line140-6
+  margin:
+    right: 0

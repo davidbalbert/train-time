@@ -1,6 +1,17 @@
-%div{:class => "line70-#{@line_num}"}
-
-%ol
-  - @stops.each do |stop|
-    %li= link_to stop[:name], stop_path(stop[:id], :from => @line_num)
-
+#wrapper
+  .navigation
+    %a{href: "/"} home
+  %div.line-header{class: "line70-#{@line_num}"}
+  %ul.line-wrapper
+    %li.borough
+      .sep
+      .text bronx
+      .sep
+    - @stops.each_with_index do |stop, i|
+      %li{class: i == 0 ? "first-stop" : ""}
+        .line{class: "line-#{@line_num}"}
+        = link_to stop_path(stop[:id], :from => @line_num) do
+          .stop-marker{class: "line-#{@line_num}"}
+            .stop-marker-center
+        = link_to(stop_path(stop[:id], :from => @line_num), class: "stop-name") do
+          != stop[:name].gsub(" - ", "<br>")
