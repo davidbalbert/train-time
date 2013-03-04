@@ -27,7 +27,7 @@
               %td 2min
     %li
       %a{href: "#link-to-this-station"}
-        .line.line70-s
+        .line.line70-S
         .content
           .font30.favorites-headline Times Square
           %table.font20
@@ -38,10 +38,10 @@
               %td eastbound
               %td 2min
   %span.font20.home-headline Browse
-  %a.line140-1{href: "/lines/1"} 1 line
-  %a.line140-2{href: "/lines/2"} 2 line
-  %a.line140-3{href: "/lines/3"} 3 line
-  %a.line140-4{href: "/lines/4"} 4 line
-  %a.line140-5{href: "/lines/5"} 5 line
-  %a.line140-6{href: "/lines/6"} 6 line
-  %a.line140-s{href: "/lines/s"} S line
+  = link_to "1 line", line_path(1), :class => "line140-1"
+  = link_to "2 line", line_path(2), :class => "line140-2"
+  = link_to "3 line", line_path(3), :class => "line140-3"
+  = link_to "4 line", line_path(4), :class => "line140-4"
+  = link_to "5 line", line_path(5), :class => "line140-5"
+  = link_to "6 line", line_path(6), :class => "line140-6"
+  = link_to "S line", line_path("S"), :class => "line140-S"
