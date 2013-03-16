@@ -8,6 +8,7 @@ gem 'rails', '3.2.12'
 
 gem 'pg'
 gem 'haml'
+gem 'ruby-protocol-buffers'
 
 group :development do
   gem 'rmagick'
