@@ -1,5 +1,7 @@
 require 'open-uri'
 
+require 'nyct-subway.pb'
+
 class SubwayDataFetcher
   class ApiException < StandardError; end
 
@@ -54,6 +56,8 @@ class SubwayDataFetcher
       end
 
       puts "#{body.size} bytes read"
+
+      data = TransitRealtime::FeedMessage.parse(body)
     end
   end
 
