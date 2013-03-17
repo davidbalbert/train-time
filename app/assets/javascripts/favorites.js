@@ -11,12 +11,19 @@ $(document).ready(function () {
   });
 
   // List of favorites on home page
-  var favIds = getFavorites();
-  $(".favorites-headline").each(function (idx) {
-    var stopId = favIds[idx];
-    $(this).text(stopId);
-    $(this).closest("a").attr("href", "/stops/" + stopId);
-  });
+  if ($("ul.favorites").length) {
+    Handlebars.registerHelper("nextTrainTime", function (trains) {
+      return trains[0].time;;
+    });
+    Handlebars.registerHelper("firstLine", function (lines) {
+      return lines[0];;
+    });
+    var favIds = getFavorites();
+    getStopData(favIds, function (stopData) {
+      var markup = HandlebarsTemplates['pages/favorite_times'](stopData);
+      $("ul.favorites").html(markup);
+    });
+  }
 
   // Helpers
   function updateFavoriteLink (el, favorited) {

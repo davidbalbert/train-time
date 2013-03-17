@@ -1,0 +1,14 @@
+{{#each this}}
+%li
+  %a{href: "stops/{{this.id}}"}
+    %div{class: "line line70-{{firstLine lines}}"}
+    .content
+      .font30.favorites-headline {{this.name}}
+      %table.font20
+        %tr
+          %td uptown
+          %td {{nextTrainTime uptown}} min
+        %tr
+          %td downtown
+          %td {{nextTrainTime downtown}} min
+{{/each}}

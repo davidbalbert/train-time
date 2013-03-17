@@ -4,7 +4,10 @@ function getCurrentStopId () {
 }
 
 function getStopData (stopId, cb) {
-  $.getJSON("/stops/" + getCurrentStopId(), cb);
+  if (typeof stopId === "object") {
+    stopId = stopId.join(",");
+  }
+  $.getJSON("/stops/" + stopId, cb);
 }
 
 

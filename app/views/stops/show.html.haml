@@ -8,7 +8,7 @@
     .text
       favorite
     .icon
-  %h1= @stop_name
+  %h1= @stop[:name]
   .lines
-    - @lines.each do |line_num|
+    - @stop[:lines].each do |line_num|
       .line{:class => "line70-#{line_num}"}
