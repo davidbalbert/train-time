@@ -60,7 +60,7 @@ class SubwayDataFetcher
 
       data = TransitRealtime::FeedMessage.parse(body)
 
-      trip_updates = data.entity.select { |e| e.has_trip_update? }.map(&:trip_update)
+      trip_updates = data.entity.select(&:has_trip_update?).map(&:trip_update)
       trip_updates.each do |tu|
         trip = Trip.where(identifier: tu.trip.trip_id).
           first_or_create(route: tu.trip.route_id)
