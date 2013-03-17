@@ -1,4 +1,4 @@
-#wrapper
+#wrapper.stop
   .navigation
     = link_to "home", root_path
     - if @from
@@ -12,38 +12,3 @@
   .lines
     - @lines.each do |line_num|
       .line{:class => "line70-#{line_num}"}
-
-  %h2 UPTOWN
-  %table.direction
-    %tr
-      %td.line
-        .line40-6
-      %td.destination Pelham Bay Park
-      %td.time 3min
-    %tr
-      %td.line
-        .line40-6
-      %td.destination Eastchester<br>Dyer Ave.
-      %td.time 4min
-    %tr
-      %td.line
-        .line40-6x
-      %td.destination Pelham Bay Park
-      %td.time 3min
-  %h2.downtown DOWNTOWN
-  %table.direction
-    %tr
-      %td.line
-        .line40-6
-      %td.destination Pelham Bay Park
-      %td.time.arriving 0min
-    %tr
-      %td.line
-        .line40-6
-      %td.destination Eastchester<br>Dyer Ave.
-      %td.time 4min
-    %tr
-      %td.line
-        .line40-6x
-      %td.destination Pelham Bay Park
-      %td.time 3min

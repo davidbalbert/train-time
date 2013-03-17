@@ -1,0 +1,10 @@
+%h2 {{direction}}
+%table.direction
+  {{#each upcoming_trains}}
+  %tr
+    %td.line
+      %div{class: "line40-{{this.line}}"}
+    %td.destination {{this.destination}}
+    %td{class: "time {{arrivingClass this}}"} {{this.time}} min
+  {{/each}}
+

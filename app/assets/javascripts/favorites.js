@@ -19,11 +19,6 @@ $(document).ready(function () {
   });
 
   // Helpers
-  function getCurrentStopId () {
-    var id = location.pathname.match(/\d+$/);
-    return id && id.length ? id[0] : null;
-  }
-
   function updateFavoriteLink (el, favorited) {
     if (favorited) {
       $(el).addClass("favorited").find(".text").text("favorited");
